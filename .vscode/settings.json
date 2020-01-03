@@ -1,0 +1,8 @@
+{
+  "azureFunctions.deploySubpath": "target/azure-functions/JavaSampleProj-1577998726858/",
+  "azureFunctions.projectLanguage": "Java",
+  "azureFunctions.projectRuntime": "~2",
+  "debug.internalConsoleOptions": "neverOpen",
+  "azureFunctions.preDeployTask": "package",
+  "java.configuration.updateBuildConfiguration": "automatic"
+}
