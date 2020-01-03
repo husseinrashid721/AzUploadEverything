@@ -1,9 +1,6 @@
 package com.java.document.function;
 
-import java.io.FileWriter;
-import java.io.IOException;
 import java.net.URISyntaxException;
-import java.nio.charset.Charset;
 import java.security.InvalidKeyException;
 import java.util.*;
 import com.microsoft.azure.functions.annotation.*;
@@ -46,26 +43,12 @@ public class UploadFile {
         context.getLogger().info("connection string:" + StorageConnectionString);
 
         // Create a local file in the ./data/ directory for uploading and downloading
-        String localPath = "./data/";
+       
         String fileName = "quickstart" + java.util.UUID.randomUUID() + ".txt";
-        //File localFile = new File(localPath + fileName);
 
         byte[] b = name.getBytes();
-        //byte[] b = string.getBytes(Charset.forName("UTF-8"));
 
-        
-        // Write text to the file
-        // FileWriter writer;
-        // try {
-        //     writer = new FileWriter(localPath + fileName, true);
-        //     writer.write("Hello, World!");
-        //     writer.close();
-        // } catch (IOException e) {
-        //     // TODO Auto-generated catch block
-        //     e.printStackTrace();
-        // }
-   
-
+      
         // Create a BlobServiceClient object which will be used to create a container client
         BlobServiceClient blobServiceClient = new BlobServiceClientBuilder().connectionString(StorageConnectionString).buildClient();
 
