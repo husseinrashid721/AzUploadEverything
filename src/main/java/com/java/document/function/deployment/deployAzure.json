@@ -69,7 +69,7 @@
                         },
                         {
                             "name": "FUNCTIONS_WORKER_RUNTIME",
-                            "value": "dotnet"
+                            "value": "Java"
                         },
                         {
                             "name": "cloud5mins_storage",

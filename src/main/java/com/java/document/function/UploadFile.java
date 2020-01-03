@@ -37,8 +37,10 @@ public class UploadFile {
 
         // Parse query parameter
         String query = request.getQueryParameters().get("name");
-
         String name = request.getBody().orElse(query);
+
+       // String destinationStorage = Environment.GetEnvironmentVariable("destinationStorage");
+      //  String destinationContainer = Environment.GetEnvironmentVariable("destinationContainer");
 
         String StorageConnectionString = "DefaultEndpointsProtocol=https;AccountName=triggerfile20200102;AccountKey=0n1A/0kXWBw8bONLfCrVDseg7g8y2KsOuCtXrIa5BJ2Ppql/7rhB3hrqLWxTqFs5S9O+jTDcyQYh21L2N3Xn0w==;EndpointSuffix=core.windows.net";
         //String connectStr = System.getenv("AZURE_STORAGE_CONNECTION_STRING");
