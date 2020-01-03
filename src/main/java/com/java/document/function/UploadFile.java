@@ -39,11 +39,10 @@ public class UploadFile {
         String query = request.getQueryParameters().get("name");
         String name = request.getBody().orElse(query);
 
-       // String destinationStorage = Environment.GetEnvironmentVariable("destinationStorage");
-      //  String destinationContainer = Environment.GetEnvironmentVariable("destinationContainer");
+        String destinationStorage = System.getenv("destinationStorage");
+        String destinationContainer = System.getenv("destinationContainer");
 
-        String StorageConnectionString = "DefaultEndpointsProtocol=https;AccountName=triggerfile20200102;AccountKey=0n1A/0kXWBw8bONLfCrVDseg7g8y2KsOuCtXrIa5BJ2Ppql/7rhB3hrqLWxTqFs5S9O+jTDcyQYh21L2N3Xn0w==;EndpointSuffix=core.windows.net";
-        //String connectStr = System.getenv("AZURE_STORAGE_CONNECTION_STRING");
+        String StorageConnectionString = destinationStorage;//System.getenv("AZURE_STORAGE_CONNECTION_STRING");
         context.getLogger().info("connection string:" + StorageConnectionString);
 
         // Create a local file in the ./data/ directory for uploading and downloading
@@ -70,7 +69,8 @@ public class UploadFile {
         // Create a BlobServiceClient object which will be used to create a container client
         BlobServiceClient blobServiceClient = new BlobServiceClientBuilder().connectionString(StorageConnectionString).buildClient();
 
-        String containerName = "triggerfilecont";
+       // destinationContainer
+        String containerName = destinationContainer;//"triggerfilecont";
 
         BlobContainerClient containerClient = blobServiceClient.getBlobContainerClient(containerName);
       
