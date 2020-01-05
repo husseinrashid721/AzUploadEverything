@@ -1,4 +1,4 @@
-package com.document.file.function;
+package UploadFile.FunctionApp;
 
 import com.microsoft.azure.functions.*;
 

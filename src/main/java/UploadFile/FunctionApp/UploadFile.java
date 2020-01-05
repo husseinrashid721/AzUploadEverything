@@ -1,4 +1,4 @@
-package com.java.document.function;
+package UploadFile.FunctionApp;
 
 import java.net.URISyntaxException;
 import java.security.InvalidKeyException;
